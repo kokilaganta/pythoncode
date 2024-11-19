@@ -1,4 +1,5 @@
 import random
+import sys
 
 def generate_random_numbers(n):
     random_numbers = []
@@ -18,7 +19,9 @@ def generate_random_numbers(n):
     
     return random_numbers, total_sum, min_value, max_value
 
-n = int(input("Enter the number of random numbers: "))
+
+n = int(sys.argv[1]) if len(sys.argv) > 1 else 10
+
 numbers, total_sum, min_value, max_value = generate_random_numbers(n)
 
 print(f"Random Numbers: {numbers}")
